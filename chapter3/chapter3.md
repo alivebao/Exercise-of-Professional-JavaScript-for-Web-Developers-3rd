@@ -46,7 +46,7 @@
       * "function" - 给定值是函数
       
     __这里有个很奇怪的地方，可以对未声明的变量使用typeof判断类型，此时不会报错，会返回undefined__  
-  3. 什么是Undefined类型？
+  3. 什么是Undefined类型？  
     答：Undefeined类型只有一个值-undefined。使用var声明变量但未对其进行定义时，该变量的值即为undefined。此外，显式将变量定义为undefeined(var b = undefined)是没有必要的，这么做和直接定义一个变量(var a)是一样的效果。例：
     ```
     var a;
@@ -68,6 +68,55 @@
     console.log(null == undefined) //true
     ```
     undefined主要用于表明一个值尚未定义。null用于强调该值是__空__的。  
-    __只要意在保存对象的变量还没真正保存对象时，就应该明确的让该变量保存null__。
+    __只要意在保存对象的变量还没真正保存对象时，就应该明确的让该变量保存null__。      
+  6. 什么是Boolean类型？  
+    答：Boolean类型只有两个字面值(true/false)。True和False都不是Boolean值，只是标识符。  
+  7. 不同类型值间与Boolean的转换？
+    答：要将一个值转换为对应的Boolean，可以调用转型函数Boolean():
+    ```
+    var msg = "hello";
+    var msg2Boolean = Boolean(msg); //true
+    ```  
     
-    
+数据类型 | 转为true的值 | 转为false的值
+- | - | -
+Boolean | true | false
+String | 任何非空字符串 | ""(空字符串)
+Number | 任何非0数字(包括无穷大) | 0和NaN
+Object | 任何对象 | null
+Undefined | 不适用 | undefined  
+  
+  8. 什么是Number类型？  
+   答：Number最基本的数值字面量格式是十进制整数，此外还有八进制(以0开头，__在严苛模式下无效，会导致支持该模式的JS引擎抛出错误__)、十六进制等(以0x开头)。  
+   浮点数是指包含小数点且小数点后面必须至少有一位数字的数。保存浮点数需要的内存空间是整数的两倍，ECMAScript会不失时机的将其转换为整数。如小数点后面未跟任何数字(如1.)/浮点数本身就是一个整数(如1.0)等情况。  
+   需要注意的是浮点数的计算。其精度在计算时非常糟糕：  
+   ```
+   var a = 0.1 , b = 0.2;
+   console.log(a + b === 0.3) // false
+   ```
+   a + b 返回的值是0.30000000000000004。当需要判断两个浮点数是否相等时，可以采用以下方式：  
+   ```
+   var a = 0.1 , b = 0.2;
+   console.log(a + b - 0.3 < 0.0000001) // true
+   ```     
+   数值超过Number可表示的范围时，会得到Infinity/-Infinity的值。  
+   NaN：Not a Number。任何数值除以非数值均会返回NaN，其有两个特点：  
+   1. 任何涉及NaN的操作均会返回NaN。  
+   2. NaN与包括其本身在内的任何值都不相等，通过isNaN(param)判断参数param是否为NaN。  
+   
+  9. 数值转换，Number()/parseInt()/parseFloat()的区别？  
+   3个可以把非数字转换为数值的函数：Number()/parseInt()/parseFloat()  
+   Number()的转换规则：  
+   1. Boolean: true->1, false->0  
+   2. Number: 不做操作  
+   3. null: 0
+   4. undefined: NaN
+   5. String:  
+       1. 字符串只包含数字(包括带正负号的情况)：转为十进制数字
+       2. 字符串包含有效浮点格式：转为相应浮点数值
+       3. 包含有效十六进制：转为大小相同的十进制
+       4. 包含有效八进制：忽略前导0，直接转为十进制
+       5. 空字符串：0
+       6. 其他：NaN
+   6. object: 调用对象的valueOf(),然后依照上面的规则转换返回的值。
+   
