@@ -9,4 +9,6 @@
     * [第一节 语法和变量](chapter3/section1.md)
     * [第二节 数据类型1-Undefined/Null/Boolean)](chapter3/section2.md)
     * [第三节 数据类型2-Number/String/Object)](chapter3/section3.md)
+    * [第四节 操作符和语句](chapter3/section4.md)
+    * [第五节 函数](chapter3/section5.md)
 

@@ -2,6 +2,8 @@
 
 根据JS高程编写的习题，欢迎star/fork
 
-Link: https://github.com/alivebao/Gitbook4JS
+项目地址: https://github.com/alivebao/Gitbook4JS
 
-Mail: miaoyunze@foxmail.com
+在线阅读: https://book.miaoyunze.com/
+
+作者邮箱: miaoyunze@foxmail.com
