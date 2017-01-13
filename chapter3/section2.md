@@ -1,4 +1,4 @@
-## 数据类型1-Undefined/Null/Boolean
+# 第二节 数据类型1-Undefined/Null/Boolean
   1. JS的5种简单数据类型分别是？  
     答：Undefined/Null/Boolean/Number/String，此外还有一种复杂数据类型-Object(本质是由一组无序的键值对组成)  
   2. typeof的作用是？  
