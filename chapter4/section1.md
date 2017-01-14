@@ -39,6 +39,30 @@
   ```
   可以看到，将num1(基本类型)中的值赋值给num2后，修改num2中的值并不影响num1.将obj1(引用类型)中的值赋值给obj2轴，修改obj2的name属性为"world"，由于obj1和obj2__引用着内存空间中的同一对象__，因此console.log(obj1.name)的结果同样为"World"。  
   
-  3. 向函数传参的过程中，对于引用类型是按值传递还是按引用传递？  
+4. 向函数传参的过程中，对于引用类型是按值传递还是按引用传递？如何证明？  
   答：按值传递。__ECMAScript中所有函数的参数都是按值传递的__。在向参数传递基本类型的值时，被传递的值会被复制给一个局部变量。传递引用类型时，会把这个值在内存中的地址复制给一个局部变量。__因此，这个局部变量的变化会反应在外部，会影响到原引用类型__  
- 
+  ```
+  function setName(obj){
+    obj.name = "HellO";
+    obj = new Object();
+    obj.name = "World";
+  }
+  
+  var person = new Object();
+  setName(person);
+  console.log(person.name); //Hello
+  ```
+  由于是按值传递，setName中第一行obj.name = "Hello"会影响到原引用类型，此时person.name的值为Hello。  
+  在第二行中给obj重新new了一个object，此时obj指向了一个新的对象。  
+  若是按引用传递，则person也将指向同一个新对象。将新对象的name设为World，person.name同样应收到影响。
+  若是按值传递，则仅是函数内的obj指向新对象，person在此之后与obj不在关联，对obj.name的赋值不会影响person。  
+  打印结果证明函数是按值传递的。
+  
+5. typeof是用于检测String/Number/Boolean/Undefined的有效工具，但对null或对象，typeof均会返回"object"。应如何确定某对象是什么类型的？  
+  答：使用instanceof操作符。若变量是给定引用类型的实例，则instanceof操作法就返回true
+  ```
+  var colors = ["red", "green"];
+  console.log(colors instanceof Array); //true
+  ```
+  根据规定，所有引用类型的值都是Object的实例，因此在检测一个引用类型值和Object构造函数时，instanceof始终返回true。  
+  __如果使用instanceof操作符检测基本类型的值，该操作法始终返回false，因为基本类型不是对象。__

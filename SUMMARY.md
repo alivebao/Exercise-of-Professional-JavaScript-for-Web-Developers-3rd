@@ -13,4 +13,5 @@
     * [第五节 函数](chapter3/section5.md)
 * [第四章 变量、作用域和内存问题](chapter4/README.md)
     * [第一节 基本类型和引用类型的值](chapter4/section1.md)
+    * [第二节 执行环境及作用域](chapter4/section2.md)
 
