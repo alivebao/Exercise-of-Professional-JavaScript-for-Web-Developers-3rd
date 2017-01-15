@@ -72,7 +72,7 @@
     console.log(String(c)); //"null"
     console.log(String(d)); //"undefined"
     ```
-  5. 每个Object实例都具有的属性和方法是？
+  5. 每个Object实例都具有的属性和方法是？  
     答：
       1. constructor: 保存用于创建当前对象的函数
       2. hasOwnProperty(propertyName): 用于检测给定属性在当前实例中是否存在

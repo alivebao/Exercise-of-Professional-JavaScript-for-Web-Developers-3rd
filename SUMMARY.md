@@ -1,8 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [第一章 JavaScript简介](chapter1/README.md)
-    * [JavaScript简介](chapter1/section1.md)
+* [第一章 JavaScript简介](chapter1/section1.md)
 * [第二章 在HTML中使用JavaScript](chapter2/README.md)
     * [在HTML中使用JavaScript](chapter2/section1.md)
 * [第三章 基本概念](chapter3/README.md)
@@ -14,4 +13,6 @@
 * [第四章 变量、作用域和内存问题](chapter4/README.md)
     * [第一节 基本类型和引用类型的值](chapter4/section1.md)
     * [第二节 执行环境及作用域](chapter4/section2.md)
+* [第五章 引用类型](chapter5/README.md)
+    * [第一节 Array类型](chapter5/section1.md)
 
