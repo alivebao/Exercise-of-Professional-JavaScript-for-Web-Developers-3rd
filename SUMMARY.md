@@ -15,4 +15,5 @@
     * [第二节 执行环境及作用域](chapter4/section2.md)
 * [第五章 引用类型](chapter5/README.md)
     * [第一节 Array类型](chapter5/section1.md)
+    * [第二节 RegExp类型](chapter5/section2.md)
 
