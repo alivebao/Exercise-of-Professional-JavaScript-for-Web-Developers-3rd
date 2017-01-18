@@ -17,4 +17,5 @@
     * [第一节 Array类型](chapter5/section1.md)
     * [第二节 RegExp类型](chapter5/section2.md)
     * [第三节 Function类型](chapter5/section3.md)
+    * [第四节 基本包装类型](chapter5/section4.md)
 
