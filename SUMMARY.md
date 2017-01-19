@@ -18,4 +18,5 @@
     * [第二节 RegExp类型](chapter5/section2.md)
     * [第三节 Function类型](chapter5/section3.md)
     * [第四节 基本包装类型](chapter5/section4.md)
+    * [第五节 单体内置对象](chapter5/section5.md)
 
