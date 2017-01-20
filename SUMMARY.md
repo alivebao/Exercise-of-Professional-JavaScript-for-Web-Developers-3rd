@@ -19,4 +19,6 @@
     * [第三节 Function类型](chapter5/section3.md)
     * [第四节 基本包装类型](chapter5/section4.md)
     * [第五节 单体内置对象](chapter5/section5.md)
+* [第六章 面向对象的程序设计](chapter6/README.md)
+    * [第一节 理解对象](chapter6/section1.md)
 
