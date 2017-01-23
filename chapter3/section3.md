@@ -61,7 +61,7 @@
     ```   
     执行过程为：首先在内存(假设内存地址为a)中创建字符串"hello",在text中保存其地址a。然后创建新的字符串"world"(假设地址为b),将"hello"与"world"拼接成一个新的字符串(假设地址为c)，text中保存c的值。  
   4. 在不确定要转换的值是否为null/undefined时，如何将其转换为String类型？
-    答：一般使用toString函数将值转换为String类型。但当要转换的值为null/undefined时，执行toString()会产生错误。这是可以使用转型函数String()。
+    答：一般使用toString函数将值转换为String类型。但当要转换的值为null/undefined时，执行toString()会产生错误。这时可以使用转型函数String()。
     ```
     var a = 10;
     var b = true;

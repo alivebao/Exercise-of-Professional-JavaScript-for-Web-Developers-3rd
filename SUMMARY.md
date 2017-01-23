@@ -22,4 +22,5 @@
 * [第六章 面向对象的程序设计](chapter6/README.md)
     * [第一节 理解对象](chapter6/section1.md)
     * [第二节 创建对象-工厂模式和构造函数模式](chapter6/section2.md)
+    * [第三节 创建对象-原型模式](chapter6/section3.md)
 
