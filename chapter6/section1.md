@@ -23,7 +23,7 @@
 3. 如何为对象定义多个属性？  
   答：Object.defineProperties，接收两个对象参数，第一个是要添加/修改属性的对象，第二个对象的属性与第一个对象中要添加/修改的属性一一对应。  
 
-4.如何读取对象属性的特性？  
+4. 如何读取对象属性的特性？  
   答：Object.getOwnPropertyDescriptor(objName, attrName)可以取得给定属性的描述符，返回值是一个对象。  
   如果是访问器属性，这个返回的对象的属性有configurable/enumerable/get和set；  
   如果是数据属性，这个返回的对象的属性有configurable/enumerable/writable和value。  

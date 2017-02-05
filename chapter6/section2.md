@@ -1,6 +1,6 @@
 # 第二节 创建对象-工厂模式和构造函数模式
 1. 什么是工厂模式？使用工厂模式创建一个对象。  
-  工程模式抽象了创建具体对象的过程，用函数封装以特定接口创建对象的细节。  
+    答：工程模式抽象了创建具体对象的过程，用函数封装以特定接口创建对象的细节。  
     ```
     function createPerson(name, age){
         var o = new Object();
@@ -34,7 +34,7 @@
     2. 直接将属性和方法赋给了this对象。  
     3. 没有return语句。    
 4. var person1 = new Person("John", 29)这一过程中，new的作用是？      
-  要创建Person的新实例，必须使用__new__操作符。  
+  答：要创建Person的新实例，必须使用__new__操作符。  
   采用该方式调用构造函数会经历以下4个步骤：  
     1. 创建一个新对象。  
     2. 将构造函数的作用域赋给新对象(因此this就指向了这个新对象)。  
@@ -42,7 +42,7 @@
     4. 返回新对象。  
    
 5. 如何检测对象person1和person2的类型？  
-  可以通过instanceOf操作法检测对象的类型：  
+  答：可以通过instanceOf操作法检测对象的类型：  
     ```
     console.log(person1 instanceof Object); //true
     console.log(person1 instanceof Person); //true
@@ -50,7 +50,7 @@
     console.log(person2 instanceof Person); //true
     ```    
 6. 构造函数和普通函数的区别？  
-  构造函数也是函数，其与其他函数的唯一区别在于调用方式不同。  
+  答：构造函数也是函数，其与其他函数的唯一区别在于调用方式不同。  
   任何函数，只要通过new操作符来调用，就可以作为构造函数。  
   任何函数，如果不通过new操作符来调用，就是普通函数。  
   在上面的例子中，将Person作为普通函数进行调用：
@@ -67,7 +67,7 @@
     o.sayName();        //Des
     ```  
 7. 构造函数存在什么缺点？  
-  在之前的例子中，person1和person2都有一个名为sayName的方法，这两个方法__不是同一个Function的实例__：  
+  答：在之前的例子中，person1和person2都有一个名为sayName的方法，这两个方法__不是同一个Function的实例__：  
     ```
     console.log(person1.sayName == person2.sayName);     //false
     ```  
