@@ -91,7 +91,7 @@
     console.log(person2.friends);   //"Alice, Jack, Snobby, Van"
     ```  
   可以看到的是person1中对friends修改后，person2的friends也会反应出来(这是因为person1.friends和person2.friends均是通过指向prototype的指针指向了Person.prototype的属性, 实际上指向的是同一个属性-Person.prototype.friends)  
-6. 如何解决原型模式的缺点？  
+6. 如何解决原型模式的缺点(组合使用构造函数模式和原型模式)？  
   答：可以采用组合使用构造函数模式和原型模式的方法解决该问题-实例属性在构造函数中定义，所有实例共享的属性和方法在原型中定义：  
     ```
     function Person(name, age){

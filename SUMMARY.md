@@ -25,4 +25,5 @@
     * [第三节 创建对象-原型模式](chapter6/section3.md)
     * [第四节 创建对象-动态原型模式和寄生构造函数模式](chapter6/section4.md)
     * [第五节 继承-原型链、借用构造函数和组合继承](chapter6/section5.md)
+    * [第六节 继承-原型式继承、寄生式继承和寄生组合式继承](chapter6/section6.md)
 
