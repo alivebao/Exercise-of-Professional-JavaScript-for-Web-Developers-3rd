@@ -37,10 +37,11 @@
         }
         return result;
     }
+    var result = createFunctions();
     result[1]();      //10;
     result[9]();      //10;
     ```  
-  createFunctions会返回一个函数数组，该数组中每个函数的作用域链均保存着createFunctions的活动对象。  
+  createFunctions会返回一个函数数组，该数组中各函数的功能是返回i，他们的作用域链均保存着createFunctions的活动对象。  
   也就是说，这些函数在调用i时实际上引用的都是createFunctions中的i。当createFunctions执行完后，i的值是10，因此这些函数的返回值都是10。  
   作用域链关系如图所示：  
   ![作用域链](../../res/pic/7_1_2.jpg)  
@@ -59,7 +60,73 @@
         
         return result;
     }
-    
+    var result = createFunctions();
     result[1]();        //1
     result[9]();        //9
     ```  
+  这里result保存的是各函数的执行结果，可以这么理解：  
+    ```
+    function createFunctions(){
+        var result = new Array();
+        
+        var anoFunction = function(param){
+            var getOuterParam = function(){
+                return param;
+            }
+            return getOuterParam;
+        }
+        
+        for(var i = 0 ; i < 10 ; i++){
+            
+            result[i] = anoFunction(i);
+        }
+        
+        return result;
+    }
+    var result = createFunctions();
+    result[1]();        //1
+    result[9]();        //9
+    ```  
+  如图所示，anoFunction返回了一个函数getOuterParam，该函数的功能为返回anoFunction调用时的参数param。  
+  执行anoFunction(i)的返回值为参数i。  
+  ![作用域链](../../res/pic/7_1_3.jpg)  
+    
+3. 以下代码的返回值是？  
+    ```
+    var name = "The Window";
+    
+    var obj = {
+        name: "My Obj",
+        getNameFunc: function() {
+            return function() {
+                return this.name;
+            }
+        }
+    }
+    
+    console.log(obj.getNameFunc()());   //The Window
+    ```  
+  obj.getNameFunc返回了一个匿名函数，这个函数的函数体为return this.name。  
+  在全局环境下调用该函数时，该函数的this会被设为window。  
+  由于该函数有this参数，因此不会访问obj中的this，打印结果为The Window。如图所示。  
+  ![作用域链](../../res/pic/7_1_4.jpg)  
+  可以通过以下操作让闭包访问对象属性：  
+    ```
+    var name = "The Window";
+    
+    var obj = {
+        name: "My Obj",
+        getNameFunc: function() {
+            var that = this;
+            return function() {
+                return that.name;
+            }
+        }
+    }
+    
+    console.log(obj.getNameFunc()());   //My Obj
+    ```  
+  调用该函数时，该匿名函数返回that.name。  
+  由于该匿名函数中没有that参数，会通过作用域链访问外部函数getNameFunc的that，也就是obj的this，因此打印结果为My Obj。  
+  ![作用域链](../../res/pic/7_1_5.jpg)  
+  
