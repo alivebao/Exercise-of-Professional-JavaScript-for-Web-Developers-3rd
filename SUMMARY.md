@@ -28,4 +28,5 @@
     * [第六节 继承-原型式继承、寄生式继承和寄生组合式继承](chapter6/section6.md)
 * [第七章 函数表达式](chapter7/README.md)
     * [第一节 闭包](chapter7/section1.md)
+    * [第二节 块级作用域和私有变量](chapter7/section2.md)
 
