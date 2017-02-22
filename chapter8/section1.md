@@ -35,3 +35,48 @@
     ```  
   __在IE/Opera中，screenLeft和screenTop中保存的是从屏幕坐标和上边到由window对象表示的页面可见区域的距离__  
   __在Chrome/Firefox/Safari中，screenY/screenTop中保存的是整个浏览器窗口对于屏幕的坐标值。__  
+  
+5. 如何获取浏览器页面视口大小？不同浏览器下innerWidth/outerWidth和innerHeight/outerHeight的区别？  
+    ```
+    //获取页面视口大小
+    var pageWidth = window.innderWidth;
+    var pageHeight = window.innerHeight;
+    
+    if(typeof pageWidth != "number) {
+        if(document.compatMode == "CSS1Compat"){    //判断页面是否处于标准模式
+            pageWidth = document.documentElement.clientWidth;
+            pageHeight = document.documentElement.clientHeight;        
+        }
+        } else {
+            pageWidth = document.body.clientWidth;
+            pageHeight = document.body.clientHeight;
+        }
+    }
+<table>
+  <tbody>
+    <tr>
+      <th align="center"></th>
+      <th align="center">IE9+</th>
+      <th align="center">Firefox</th>
+      <th align="center">Safari</th>
+      <th align="center">Opera</th>
+      <th align="center">Chrome</th>
+    </tr>
+    <tr>
+      <td align="center">outerWidth/outerHeiht</td>
+      <td align="center">浏览器本身尺寸</td>
+      <td align="center">浏览器本身尺寸</td>
+      <td align="center">浏览器本身尺寸</td>
+      <td align="center">页面视图容器的大小</td>
+      <td align="center">视口大小</td>
+    </tr>    
+    <tr>
+      <td align="center">innerWidth/innerHeight</td>
+      <td align="center">不支持</td>
+      <td align="center">?</td>
+      <td align="center">?</td>
+      <td align="center">该容器页面中页面视图区的大小(减去边框宽度)</td>
+      <td align="center">视口大小</td>
+    </tr>    
+  </tbody>
+</table>
