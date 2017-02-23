@@ -80,3 +80,17 @@
     </tr>    
   </tbody>
 </table>
+
+6. setTimeout和setInterval的区别？  
+  setTimeout接受两个参数-要执行的代码和以毫秒表示的时间。第一个参数可以是一个包含JS的字符串，也可以是一个函数。  
+  setTimeout返回一个id，在setTimeout中的代码执行前可通过clearTimeout(id)取消尚未执行的调用计划：  
+    ```
+    var timeoutId = setTImeout(function() {
+        alert("Hello");
+    }, 3000);
+    
+    clearTimeout(timeoutId)；
+    ```  
+  setInterval类似与setTimeout，不同之处在于setTimeout只执行一次，setInterval在调用clearInterval前会不断执行。  
+  一般认为使用超时调用(setTimeout)模拟间歇调用(setInterval)是一种最佳模式，最好不要使用间歇调用。  
+  
