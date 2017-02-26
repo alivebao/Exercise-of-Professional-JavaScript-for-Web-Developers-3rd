@@ -32,4 +32,7 @@
 * [第八章 BOM](chapter8/README.md)
     * [第一节 window对象](chapter8/section1.md)
     * [第二节 location/navigator和history对象](chapter8/section2.md)
+* [第九章 客户端检测](chapter9/README.md)
+    * [第一节 能力检测&怪癖检测](chapter9/section1.md)
+    * [第二节 用户代理检测](chapter9/section2.md)
 
