@@ -53,14 +53,14 @@
       parseInt("10", 8)     //8
       ```
     parseFloat类似parseInt, 区别在于其支持浮点数且不支持基数设置(没有第二个参数)。  
-  3. 字符串的值能否改变？
+  3. 字符串的值能否改变？  
     答：字符串一旦创建，其值就不能改变。
     ```
     var text = "hello"
     text = text + "world";
     ```   
     执行过程为：首先在内存(假设内存地址为a)中创建字符串"hello",在text中保存其地址a。然后创建新的字符串"world"(假设地址为b),将"hello"与"world"拼接成一个新的字符串(假设地址为c)，text中保存c的值。  
-  4. 在不确定要转换的值是否为null/undefined时，如何将其转换为String类型？
+  4. 在不确定要转换的值是否为null/undefined时，如何将其转换为String类型？  
     答：一般使用toString函数将值转换为String类型。但当要转换的值为null/undefined时，执行toString()会产生错误。这时可以使用转型函数String()。
     ```
     var a = 10;

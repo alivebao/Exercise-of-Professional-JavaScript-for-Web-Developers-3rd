@@ -87,7 +87,7 @@
     printColor.call(o);         //blue
     ```    
 
-6. 介绍以下bind函数？  
+6. 介绍一下bind函数？  
   答：该方法会创建一个函数的实例，其this值会被绑定到传给bind()函数的值。  
     ```
     window.color = "red";
