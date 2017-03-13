@@ -35,4 +35,6 @@
 * [第九章 客户端检测](chapter9/README.md)
     * [第一节 能力检测&怪癖检测](chapter9/section1.md)
     * [第二节 用户代理检测](chapter9/section2.md)
+* [第十章 DOM](chapter10/README.md)
+    * [第一节 节点层次](chapter10/section1.md)
 
